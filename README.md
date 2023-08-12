@@ -1,58 +1,64 @@
 # Extensionless Web Framework
 
-This Python-based web framework allows you to serve HTML, CSS, and image files (PNG, JPG, JPEG) without requiring extensions. It also includes a component generator to help create new HTML pages with consistent styling and comes with an example HTML page and the Morph Bootswatch theme to get started quickly.
+This C-based web framework allows you to serve HTML, CSS, and image files (PNG, JPG, JPEG) without requiring extensions. It provides a minimalist approach to web development, designed for optimal performance and compatibility with low-spec systems.
 
 ## Features
 
 - Extensionless routing for HTML, CSS, PNG, JPG, and JPEG files.
 - File-based routing for quickly putting together web applications.
-- Component generator to create new HTML pages with Bootstrap styling and ready-to-customize templates.
-- Component creator feature: Automatically converts URLs in the input paragraph into clickable links in the created HTML page.
-- Serves files from the directory the script is running in.
-- Comes with an example HTML page and Morph Bootswatch theme for immediate use and customization.
-- Does not require any libraries outside of a default Python 3 install.
+- Minimalist design for performance and efficiency.
+- Compatibility with low-spec systems, tested on VMs with less than 4GB of RAM.
+- Serves files from the directory the program is running in.
+
+## Dependencies
+
+The framework relies on GNU Libmicrohttpd (microhttpd), a C library that provides a simple HTTP server. You'll need to have this library installed in your system to compile the framework. Visit the [GNU Libmicrohttpd website](https://www.gnu.org/software/libmicrohttpd/) for more information and installation instructions.
 
 ## Getting Started
 
 ### Running the Server
 
-1. Save the server code as `extensionless.py`.
-2. In the terminal, navigate to the directory containing the `extensionless.py` file and the example HTML page.
-3. Run the following command:
+1. Compile and build the server code using a C compiler (e.g., GCC).
+2. Run the compiled executable.
+3. Access the web app by visiting `http://localhost:8000` in your browser.
+
+### Compile and Run Script
+
+To simplify the compilation and running process, an included script named `compile_run.sh` can be used. Here's how to use it:
+
+1. Open a terminal in the directory containing the framework's files.
+2. Run the following command to make the script executable:
    ```bash
-   python3 extensionless.py
+   chmod +x compile_run.sh
+   ```
+3. Run the script:
+   ```bash
+   ./compile_run.sh
    ```
 4. Access the web app by visiting `http://localhost:8000` in your browser.
 
-### Using the Component Generator
+### Routing and File Serving
 
-1. Save the component generator code as `create_extensionless.py`.
-2. In the terminal, navigate to the directory containing the `create_extensionless.py` file.
-3. Run the following command:
-   ```bash
-   python3 create_extensionless.py
-   ```
-4. Follow the prompts to enter the title, heading, and paragraph for the new page.
-5. **Note:** The component creator is designed to provide a basic HTML template that you can tweak and customize after creation. It includes Bootstrap classes and automatically generated links to facilitate your customizations.
+The framework automatically handles routing and serves HTML, CSS, and image files without requiring extensions. Simply place your files in the same directory as the executable and access them using clean, extensionless URLs.
 
-### Example HTML Page and Theme
+### Example HTML Page
 
-The framework comes with an example HTML page and Morph Bootswatch theme. You can explore and modify this page to learn more about how the framework works and how to customize it to your needs.
+The framework comes with an example HTML page. You can explore and modify this page to learn more about how the framework works and how to customize it to your needs.
 
 ## Customization
 
 ### Linking to Other Pages
 
-The component generator will automatically create navigation buttons for other HTML files in the directory.
+You can easily link to other pages in the same directory using relative URLs. The framework will handle the routing for you.
 
 ### Styling
 
-You can easily customize the styling by modifying the Bootstrap classes in the generated HTML files or changing the Bootswatch theme.
+The provided example HTML page uses Bootstrap styling. Feel free to enhance it by adding your own CSS or using a front-end framework.
 
 ## Security Considerations
 
-The code includes path sanitation to prevent malicious path traversal attempts.
+The code includes path sanitation to prevent malicious path traversal attempts, ensuring the security of your web application.
 
 ## Contributing
 
-Feel free to modify the code and adapt it to your specific needs.
+Feel free to modify the code and adapt it to your specific needs. If you encounter any issues or have suggestions for improvements, please submit a pull request or open an issue on the repository.
