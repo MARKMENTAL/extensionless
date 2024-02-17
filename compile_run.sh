@@ -1,4 +1,5 @@
 #!/bin/bash
 
-gcc -o web_server web_server.c -lmicrohttpd
-./web_server
+#old one that used microhttpd
+#gcc -o web_server web_server.c -lmicrohttpd
+gcc -o web_server web_server.c && ./web_server
